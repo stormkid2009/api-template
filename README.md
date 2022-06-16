@@ -1,8 +1,10 @@
 # REST API Best Practices:
 
 ## Versioning:
+```
 > api/v1/users
 > api/v2/users
+```
 
 ## Name resources in plural:
 > like 
@@ -18,8 +20,10 @@
 > res.status(500)  server error   ..etc
 
 ## Avoid verbs in endpoint names:
+```
 > GET "/api/v1/movies"  (✓)
 > GET "/api/v1/getAllmovies" (x)
+```
 
 ## Group associated resources together:
 
