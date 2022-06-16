@@ -96,5 +96,15 @@
       "createdAt": "6/5/2022, 11:59:29 PM",
       "updatedAt": "6/5/2022, 11:59:29 PM"
     }
+  ],
+  "users":[
+    {
+      "name":"sherif ahmed",
+      "email":"sherif@gmail.com"
+    },
+    {
+      "name":"anwar ahmed",
+      "email":"anwar@outlook.com"
+    }
   ]
 }

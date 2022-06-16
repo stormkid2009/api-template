@@ -6,4 +6,5 @@ const saveToDatabase = (DB:object) => {
     });
   };
   
-  module.exports = { saveToDatabase };
+  //module.exports = { saveToDatabase };
+  export default saveToDatabase;

@@ -1,8 +1,13 @@
+import User from "../database/User"
 
-
-
+//good practice to name service functions the same like controller functions
 const getAllusers=()=>{
-    return "this is all users we got!"
+    try {
+        const allUsers = User.getAllUsers();
+        return allUsers;
+    } catch (error) {
+       throw error; 
+    }
 };
 
 const getOneUser=(userId:string)=>{
