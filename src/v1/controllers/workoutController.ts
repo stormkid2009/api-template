@@ -26,6 +26,7 @@ const getOneWorkout = (req: Request, res: Response) => {
         status: "FAILED",
         data: { error: "Parameter ':workoutId' can not be empty" },
       });
+      
   }
   try {
     const workout = workoutService.getOneWorkout(workoutId);
