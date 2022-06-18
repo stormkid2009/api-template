@@ -61,11 +61,17 @@ const createNewUser=(req:Request,res:Response)=>{
 }
 
 const updateOneUser=(req:Request,res:Response)=>{
-    const {userId} = req.params;
+    const {body,params:{userId}} = req;
+    if(!userId){
+        res.status(400).send({
+            status:"FAILED",
+            data:{error:`there is no user with such id: "${userId}"`}
+        })
+    }
     
     try {
-        //talk to userService to get updated user
-        const updatedUser = userService.updateOneUser(userId);
+        //pass userid and body object to  userService to  update this user
+        const updatedUser = userService.updateOneUser(userId,body);
         res.status(201).send({status:"OK",data:updatedUser})
     } catch (error) {
         res.status(500).send({status:"FAILED",data:error});

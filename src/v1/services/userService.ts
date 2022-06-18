@@ -37,8 +37,13 @@ const createNewUser=(newUser:object)=>{
     }
 };
 
-const updateOneUser=(userId:string)=>{
-    return {msg:`user id ${userId} has been updated successfully!`}
+const updateOneUser=(userId:string,changes:any)=>{
+    try {
+       const updatedUser = User.updateOneUser(userId,changes);
+       return updatedUser; 
+    } catch (error) {
+       throw error; 
+    }
 };
 
 const deleteOneUser=(userId:string)=>{

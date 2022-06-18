@@ -57,13 +57,38 @@ const deleteOneUser=(userId:string)=>{
   } catch (error) {
     throw {status:500,message:error};
   }
+};
+
+const updateOneUser=(userId:string,changes:any)=>{
+  try {
+    const isAlreadyExist = DB.users.findIndex((user:any)=> user.id === userId)>-1;
+    if(!isAlreadyExist){
+      throw {
+        status:400,
+        message:`there is no such user with id : ${userId}`
+      };
+
+    }
+    const indexForUpdate = DB.users.findIndex((user:any)=> user.id === userId);
+    const updatedUser = {
+      ...DB.users[indexForUpdate],
+      ...changes,
+      updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
+    };
+    DB.users[indexForUpdate] = updatedUser;
+    saveToDatabase(DB);
+  } catch (error) {
+    throw error;
+  }
+
 }
 
 const User = {
     getAllUsers,
     createNewUser,
     getOneUser,
-    deleteOneUser
+    deleteOneUser,
+    updateOneUser
 };
 
 
