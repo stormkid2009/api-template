@@ -1,4 +1,5 @@
-import User from "../database/User"
+import User from "../database/User";
+const { v4: uuid } = require("uuid");
 
 //good practice to name service functions the same like controller functions
 const getAllusers=()=>{
@@ -11,13 +12,29 @@ const getAllusers=()=>{
 };
 
 const getOneUser=(userId:string)=>{
-    return {
-        id:userId
+    try {
+        const user = User.getOneUser(userId);
+        return user;
+        
+    } catch (error) {
+        throw error;
     }
 };
 
-const createNewUser=()=>{
-    return {msg:"user has been created successfully!"}
+const createNewUser=(newUser:object)=>{
+    const userToInsert = {
+        ...newUser,
+        id:uuid(),
+        createdAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
+        updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
+    }
+    try {
+        const createdUser = User.createNewUser(userToInsert);
+        return createdUser;
+        
+    } catch (error) {
+        throw error
+    }
 };
 
 const updateOneUser=(userId:string)=>{
@@ -25,8 +42,10 @@ const updateOneUser=(userId:string)=>{
 };
 
 const deleteOneUser=(userId:string)=>{
-    return {
-        msg:`user id ${userId} has been deleted successfully!`
+    try {
+        User.deleteOneUser(userId);
+    } catch (error) {
+       throw error; 
     }
 };
 

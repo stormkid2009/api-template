@@ -97,14 +97,20 @@
       "updatedAt": "6/5/2022, 11:59:29 PM"
     }
   ],
-  "users":[
+  "users": [
     {
-      "name":"sherif ahmed",
-      "email":"sherif@gmail.com"
+      "email": "farah@hotmail.com",
+      "name": "farah anwar",
+      "id": "42970683-0224-4766-96ff-49f4c565255d",
+      "createdAt": "6/18/2022, 6:22:56 PM",
+      "updatedAt": "6/18/2022, 6:22:56 PM"
     },
     {
-      "name":"anwar ahmed",
-      "email":"anwar@outlook.com"
+      "email": "sherif@gmail.com",
+      "name": "sherif ahmed",
+      "id": "0034f262-6eef-45e4-90dd-e89b60c9c994",
+      "createdAt": "6/18/2022, 6:27:54 PM",
+      "updatedAt": "6/18/2022, 6:27:54 PM"
     }
   ]
 }

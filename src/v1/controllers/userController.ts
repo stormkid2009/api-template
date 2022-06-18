@@ -36,10 +36,21 @@ const getOneUser=(req:Request,res:Response)=>{
 }
 
 const createNewUser=(req:Request,res:Response)=>{
+    const {body} = req;
+    if(!body.email || !body.name){
+        res.status(400).send({
+            data:`user email or name is missed plz provide it`
+        });
+        return;
+    }
     
     try {
-        //talk to userService to create new use
-        const createdUser = userService.createNewUser();
+        const newUser:object = {
+            email:body.email,
+            name:body.name,
+        }
+        //talk to userService and pass newUser object to it
+        const createdUser = userService.createNewUser(newUser);
         res.status(201).send({status:"OK",data:createdUser})
         
     } catch (error) {
@@ -65,10 +76,17 @@ const updateOneUser=(req:Request,res:Response)=>{
 
 const deleteOneUser=(req:Request,res:Response)=>{
     const {userId}=req.params;
+    if(!userId){
+        res.status(400).send({
+            status:"FAILED",
+            data:{error:"u should provide user id"}
+
+        });
+    }
     try {
         //talk to userService to delete specific user
-        const msg=userService.deleteOneUser(userId);
-        res.status(201).send({status:"OK",data:msg})
+        userService.deleteOneUser(userId);
+        res.status(204).send({status:"OK"})
         
     } catch (error) {
         res.status(500).send({status:"FAILED",data:error});
