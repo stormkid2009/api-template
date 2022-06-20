@@ -1,5 +1,7 @@
-const DB = require("./db.json");
-const { saveToDatabase } = require("./utils");
+//const DB = require("./db.json");
+import DB from "./database";
+//const { saveToDatabase } = require("./utils");
+import saveToDatabase from "./utils";
 
 const getAllWorkouts = () => {
   try {

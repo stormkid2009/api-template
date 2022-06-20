@@ -1,4 +1,5 @@
-const DB = require("./db.json");
+//const DB = require("./db.json");
+import DB from "./database";
 import saveToDatabase from "./utils";
 
 const getAllUsers = () => {
