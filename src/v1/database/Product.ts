@@ -28,9 +28,9 @@ const getOneProduct = (productId:string) => {
 
 const createNewProduct = (newProduct:any) => {
   try {
-    const isAlreadyAdded =
+    const isAlreadyExist =
       DB.products.findIndex((product:any) => product.name === newProduct.name) > -1;
-    if (isAlreadyAdded) {
+    if (isAlreadyExist) {
       throw {
         status: 400,
         message: `Product with the name '${newProduct.name}' already exists`,
@@ -46,23 +46,23 @@ const createNewProduct = (newProduct:any) => {
 
 const updateOneProduct = (productId:string, changes:any) => {
   try {
-    const isAlreadyAdded =
-      DB.products.findIndex((product:any) => product.name === changes.name) > -1;
-    if (isAlreadyAdded) {
+    const isAlreadyExist =
+      DB.products.findIndex((product:any) => product.id === productId) > -1;
+    if (!isAlreadyExist) {
       throw {
         status: 400,
-        message: `Product with the name '${changes.name}' already exists`,
+        message: `there is no such Product with the name '${changes.name}' !!!`,
       };
     }
     const indexForUpdate = DB.products.findIndex(
       (product:any) => product.id === productId
     );
-    if (indexForUpdate === -1) {
-      throw {
-        status: 400,
-        message: `Can't find product with the id '${productId}'`,
-      };
-    }
+    // if (indexForUpdate === -1) {
+    //   throw {
+    //     status: 400,
+    //     message: `Can't find product with the id '${productId}'`,
+    //   };
+    // }
     const updatedProduct = {
       ...DB.products[indexForUpdate],
       ...changes,
@@ -94,10 +94,12 @@ const deleteOneProduct = (productId:string) => {
   }
 };
 
-module.exports = {
+const Product = {
   getAllProducts,
   createNewProduct,
   getOneProduct,
   updateOneProduct,
   deleteOneProduct,
 };
+
+export default Product;

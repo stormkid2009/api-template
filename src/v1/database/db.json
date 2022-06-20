@@ -119,5 +119,37 @@
       "createdAt": "6/18/2022, 9:29:51 PM",
       "updatedAt": "6/18/2022, 9:31:15 PM"
     }
+  ],
+  "products": [
+    {
+      "name": " honor lite 9",
+      "category": "mobile",
+      "description": "huwai smart phone",
+      "price": 7000,
+      "id": "6e815183-8601-40a2-aace-6e4c65fd007e",
+      "createdAt": "6/20/2022, 8:55:02 PM",
+      "updatedAt": "6/20/2022, 9:16:30 PM",
+      "brand": "Huwaie"
+    },
+    {
+      "name": " HVFDS2021",
+      "category": "smart TV",
+      "description": "6o inc smart tv",
+      "price": 12000,
+      "brand": "Samsung",
+      "id": "d15e7801-cd18-4cd6-ae61-9001cc558e95",
+      "createdAt": "6/20/2022, 9:20:59 PM",
+      "updatedAt": "6/20/2022, 9:20:59 PM"
+    },
+    {
+      "name": " ThinkPad x1 yoga",
+      "category": "laptop",
+      "description": "12th Gen Intel® Core™ vPro® processors—with up to 14 cores",
+      "price": 30000,
+      "brand": "Lenovo",
+      "id": "45fc9120-52be-4d8f-ae26-a70ea6b653c4",
+      "createdAt": "6/20/2022, 9:26:02 PM",
+      "updatedAt": "6/20/2022, 9:26:02 PM"
+    }
   ]
 }
