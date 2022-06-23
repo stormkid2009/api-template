@@ -7,13 +7,9 @@ const getAllProducts = (req: Request, res: Response) => {
   //best practice (filtering-sort -pagination)
   try {
     const allProducts = productService.getAllProducts();
-    res
-    .status(201).send({ status: "OK", data: allProducts })
-    
+    res.status(201).send({ status: "OK", data: allProducts });
   } catch (error) {
-    res
-    .status(500).send({status:"FAILED",data:error})
-    
+    res.status(500).send({ status: "FAILED", data: error });
   }
 };
 
@@ -22,21 +18,16 @@ const getOneProduct = (req: Request, res: Response) => {
     params: { productId },
   } = req;
   if (!productId) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: { error: "Parameter ':productId' can not be empty" },
-      });
-      
+    return res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':productId' can not be empty" },
+    });
   }
   try {
     const product = productService.getOneProduct(productId);
     res.send({ status: "OK", data: product });
   } catch (error) {
-    res
-      .status( 500)
-      .send({ status: "FAILED", data: error });
+    res.status(500).send({ status: "FAILED", data: error });
   }
 };
 
@@ -49,13 +40,11 @@ const createNewProduct = (req: Request, res: Response) => {
     !body.description ||
     !body.price ||
     !body.brand
-    
   ) {
     res.status(400).send({
       status: "FAILED",
       data: {
-        error:
-          `One of the following keys is missing or is empty in request body: 
+        error: `One of the following keys is missing or is empty in request body: 
           'name','category', 'description', 'price','brand'`,
       },
     });
@@ -65,9 +54,9 @@ const createNewProduct = (req: Request, res: Response) => {
   const newProduct: object = {
     name: body.name,
     category: body.category,
-    description:body.description,
+    description: body.description,
     price: body.price,
-    brand:body.brand,
+    brand: body.brand,
   };
   try {
     const createdProduct = productService.createNewProduct(newProduct);
@@ -83,20 +72,16 @@ const updateOneProduct = (req: Request, res: Response) => {
     params: { productId },
   } = req;
   if (!productId) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: { error: "Parameter ':productId' can not be empty" },
-      });
+    res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':productId' can not be empty" },
+    });
   }
   try {
     const updatedProduct = productService.updateOneProduct(productId, body);
     res.send({ status: "OK", data: updatedProduct });
   } catch (error) {
-    res
-      .status( 500)
-      .send({ status: "FAILED", data: error });
+    res.status(500).send({ status: "FAILED", data: error });
   }
 };
 
@@ -105,20 +90,16 @@ const deleteOneProduct = (req: Request, res: Response) => {
     params: { productId },
   } = req;
   if (!productId) {
-    res
-      .status(400)
-      .send({
-        status: "FAILED",
-        data: { error: "Parameter ':productId' can not be empty" },
-      });
+    res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':productId' can not be empty" },
+    });
   }
   try {
     productService.deleteOneProduct(productId);
     res.status(204).send({ status: "OK" });
   } catch (error) {
-    res
-      .status( 500)
-      .send({ status: "FAILED", data: error });
+    res.status(500).send({ status: "FAILED", data: error });
   }
 };
 

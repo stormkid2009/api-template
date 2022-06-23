@@ -151,5 +151,31 @@
       "createdAt": "6/20/2022, 9:26:02 PM",
       "updatedAt": "6/20/2022, 9:26:02 PM"
     }
+  ],
+  "cards": [
+    {
+      "userId": "0034f262-6eef-45e4-90dd-e89b60c9c994",
+      "isEmpty": true,
+      "products": [],
+      "id": "8284ead4-501b-4de3-bf8e-826079583396",
+      "createdAt": "6/22/2022, 10:01:45 PM",
+      "updatedAt": "6/22/2022, 10:01:46 PM"
+    },
+    {
+      "userId": "42970683-0224-4766-96ff-49f4c565255d",
+      "isEmpty": true,
+      "products": [],
+      "id": "27e7ad53-e7b5-4eeb-889b-fe3158a2d8e5",
+      "createdAt": "6/22/2022, 10:11:51 PM",
+      "updatedAt": "6/22/2022, 10:11:51 PM"
+    },
+    {
+      "userId": "7cf20170-0719-4778-b11b-6e6114eeabce",
+      "isEmpty": true,
+      "products": [],
+      "id": "b82dd327-38a5-475b-86e1-e141a3845c50",
+      "createdAt": "6/22/2022, 10:13:04 PM",
+      "updatedAt": "6/22/2022, 10:13:04 PM"
+    }
   ]
 }
