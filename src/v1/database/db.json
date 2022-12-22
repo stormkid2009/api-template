@@ -163,19 +163,30 @@
     },
     {
       "userId": "42970683-0224-4766-96ff-49f4c565255d",
-      "isEmpty": true,
-      "products": [],
+      "isEmpty": false,
+      "products": [
+        {
+          "name": "watch"
+        },
+        {
+          "name": "air condition"
+        }
+      ],
       "id": "27e7ad53-e7b5-4eeb-889b-fe3158a2d8e5",
       "createdAt": "6/22/2022, 10:11:51 PM",
-      "updatedAt": "6/22/2022, 10:11:51 PM"
+      "updatedAt": "6/23/2022, 8:26:02 PM"
     },
     {
       "userId": "7cf20170-0719-4778-b11b-6e6114eeabce",
-      "isEmpty": true,
-      "products": [],
+      "isEmpty": false,
+      "products": [
+        {
+          "name": "cake"
+        }
+      ],
       "id": "b82dd327-38a5-475b-86e1-e141a3845c50",
       "createdAt": "6/22/2022, 10:13:04 PM",
-      "updatedAt": "6/22/2022, 10:13:04 PM"
+      "updatedAt": "6/23/2022, 9:21:29 PM"
     }
   ]
 }

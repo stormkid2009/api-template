@@ -9,6 +9,8 @@ router.get("/:cardId",cardController.getOneCard);
 
 router.post("/",cardController.createNewCard);
 
+router.patch("/:cardId",cardController.updateOneCard)
+
 router.delete("/:cardId",cardController.deleteOneCard);
 
 

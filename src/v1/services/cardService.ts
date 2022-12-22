@@ -43,6 +43,14 @@ const deleteOneCard=(cardId:string)=>{
     } catch (error) {
         throw error
     }
+};
+const updateOneCard = (cardId:string,changes:any)=>{
+    try {
+        const updatedCard = Card.updateOneCard(cardId,changes);
+        return updatedCard;
+    } catch (error) {
+       throw error 
+    }
 }
 
 const cardService = {
@@ -50,6 +58,7 @@ const cardService = {
     createNewCard,
     getOneCard,
     deleteOneCard,
+    updateOneCard,
 };
 
 export default cardService;

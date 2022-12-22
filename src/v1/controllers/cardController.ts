@@ -79,13 +79,38 @@ const deleteOneCard=(req:Request,res:Response)=>{
       message:error
     })
   }
+};
+const updateOneCard=(req:Request,res:Response)=>{
+  const {
+    body,
+    params:{cardId}
+  }=req;
+  if(!cardId){
+    return res.status(400).send({
+      status:"FILED",
+      message:`there is no card with id: ${cardId}`
+    })
+  }
+  try {
+    const updatedCard=cardService.updateOneCard(cardId,body);
+    res.status(201).send({
+      status:"OK",
+      data:updatedCard
+    })
+  } catch (error) {
+    res.status(500).send({
+      status:"FAILED",
+      data:error
+    })
+  }
 }
 
 const cardController = {
   getAllCards,
   createNewCard,
   getOneCard,
-  deleteOneCard
+  deleteOneCard,
+  updateOneCard,
 };
 
 export default cardController;
